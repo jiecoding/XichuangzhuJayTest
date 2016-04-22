@@ -33,14 +33,38 @@
 {
     UIImageView *logoView = [UIImageView new];
     logoView.image = [UIImage imageNamed:@"AppIcon40x40"];
-    
+    [self addSubview:logoView];
     [logoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.equalTo([NSNumber numberWithFloat:[self logoWidth]]);
         make.left.equalTo(self).offset([self logoHorizonalGap]);
         make.bottom.equalTo(self).offset(-[self logoVerticalGap]);
     }];
     
-    [self addSubview:logoView];
+ 
+
+    UILabel *authorLabel = [UILabel new];
+    NSString *text = @"李\n白";
+    authorLabel.numberOfLines = text.length;
+    
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+
+    paragraphStyle.lineSpacing = 2;
+    
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:text attributes:@{NSParagraphStyleAttributeName: paragraphStyle}];
+    
+    authorLabel.attributedText = attributedString;
+    
+    [self addSubview:authorLabel];
+    
+    [authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        //offset masonry的offset 偏移量 两个控件之间的距离
+        make.bottom.equalTo(logoView.mas_top).offset(-10);
+        make.centerX.equalTo(logoView);
+    }];
+    
+    
+    
     
 }
 

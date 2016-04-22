@@ -11,7 +11,12 @@
 #import <ionicons/IonIcons.h>
 #import "XCZQuoteDraggableView.h"
 #import <Masonry.h>
+#import "XCZQuote.h"
 @interface XCZRandomQuoteViewController ()
+
+
+@property (strong, nonatomic) NSMutableArray *quoteIds;
+
 
 @end
 
@@ -38,17 +43,42 @@
     
 }
 
-- (void)createViews
+
+- (void)loadQuoteView
 {
+    XCZQuote *randomQuote;
+    
+    if (self.quoteIds.count == 0) {
+        randomQuote = [XCZQuote getRandomQuote];
+        
+        
+    } else {
+        randomQuote = [XCZQuote getRandomQuoteExcept:self.quoteIds];
+        
+    }
+    
+    
+    
     XCZQuoteDraggableView *quoteDraggableView = [[XCZQuoteDraggableView alloc] initWithFrame:CGRectMake(40,100, 350, 500)];
+    
+    if(self.quoteIds.count == 10)
+    {
+        [self.quoteIds removeObjectAtIndex:0];
+    }
+    [self.quoteIds addObject:[NSString stringWithFormat:@"%d",randomQuote.id]];
     
     quoteDraggableView.center = self.view.center;
     
-    
-    
-    
     [self.view addSubview:quoteDraggableView];
     
+
+}
+
+- (void)createViews
+{
+    [self loadQuoteView];
+    [self loadQuoteView];
+
 }
 
 - (void)setupNavigationBar
@@ -97,6 +127,17 @@
 {
 
 }
+
+- (NSMutableArray *)quoteIds
+{
+    if (!_quoteIds) {
+        _quoteIds = [NSMutableArray new];
+    }
+    
+    return _quoteIds;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

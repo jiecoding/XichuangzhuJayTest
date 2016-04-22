@@ -21,7 +21,9 @@
 		CB781C801CC878B300F2C823 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7B1CC878B300F2C823 /* UIColor+Helper.m */; };
 		CB781C811CC878B300F2C823 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */; };
 		CB781C871CC8C84700F2C823 /* XCZQuoteDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */; };
+		CBB9ABD21CCA11160074B112 /* XCZUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB9ABD11CCA11160074B112 /* XCZUtils.m */; };
 		CBD1EEA21CC9C4C00078ADF8 /* XCZQuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1EEA11CC9C4C00078ADF8 /* XCZQuoteView.m */; };
+		CBD1EEA81CCA0D2A0078ADF8 /* XCZQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1EEA71CCA0D2A0078ADF8 /* XCZQuote.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +72,14 @@
 		CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		CB781C851CC8C84700F2C823 /* XCZQuoteDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuoteDraggableView.h; sourceTree = "<group>"; };
 		CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuoteDraggableView.m; sourceTree = "<group>"; };
+		CBB9ABD01CCA11160074B112 /* XCZUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZUtils.h; sourceTree = "<group>"; };
+		CBB9ABD11CCA11160074B112 /* XCZUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZUtils.m; sourceTree = "<group>"; };
+		CBB9ABD31CCA1F0B0074B112 /* xcz.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = xcz.db; sourceTree = "<group>"; };
 		CBD1EEA01CC9C4C00078ADF8 /* XCZQuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuoteView.h; sourceTree = "<group>"; };
 		CBD1EEA11CC9C4C00078ADF8 /* XCZQuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuoteView.m; sourceTree = "<group>"; };
 		CBD1EEA31CC9F78B0078ADF8 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CBD1EEA61CCA0D2A0078ADF8 /* XCZQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuote.h; sourceTree = "<group>"; };
+		CBD1EEA71CCA0D2A0078ADF8 /* XCZQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuote.m; sourceTree = "<group>"; };
 		D4C0547A9963EA001EAFE803 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +138,8 @@
 				CB53A6E21CC78FAC00DC01F5 /* XCZAppDelegate.m */,
 				CB53A6E41CC78FAC00DC01F5 /* XCZRandomQuoteViewController.h */,
 				CB53A6E51CC78FAC00DC01F5 /* XCZRandomQuoteViewController.m */,
+				CBB9ABCF1CCA11000074B112 /* Utils */,
+				CBD1EEA41CCA0CFB0078ADF8 /* Models */,
 				CB781C831CC8C81C00F2C823 /* Views */,
 				CB781C821CC8C79000F2C823 /* Controllers */,
 				CB781C751CC878B300F2C823 /* Categories */,
@@ -147,6 +156,7 @@
 		CB53A6DE1CC78FAC00DC01F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBB9ABD31CCA1F0B0074B112 /* xcz.db */,
 				CB53A6DF1CC78FAC00DC01F5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -209,6 +219,24 @@
 				CBD1EEA11CC9C4C00078ADF8 /* XCZQuoteView.m */,
 			);
 			path = Quote;
+			sourceTree = "<group>";
+		};
+		CBB9ABCF1CCA11000074B112 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9ABD01CCA11160074B112 /* XCZUtils.h */,
+				CBB9ABD11CCA11160074B112 /* XCZUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CBD1EEA41CCA0CFB0078ADF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1EEA61CCA0D2A0078ADF8 /* XCZQuote.h */,
+				CBD1EEA71CCA0D2A0078ADF8 /* XCZQuote.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D4AD92DA788B502F4E710056 /* Pods */ = {
@@ -414,6 +442,8 @@
 				CB781C871CC8C84700F2C823 /* XCZQuoteDraggableView.m in Sources */,
 				CB53A6E61CC78FAC00DC01F5 /* XCZRandomQuoteViewController.m in Sources */,
 				CB781C811CC878B300F2C823 /* UIImage+Helper.m in Sources */,
+				CBD1EEA81CCA0D2A0078ADF8 /* XCZQuote.m in Sources */,
+				CBB9ABD21CCA11160074B112 /* XCZUtils.m in Sources */,
 				CB53A6E31CC78FAC00DC01F5 /* XCZAppDelegate.m in Sources */,
 				CBD1EEA21CC9C4C00078ADF8 /* XCZQuoteView.m in Sources */,
 				CB781C7E1CC878B300F2C823 /* NSArray+Helper.m in Sources */,

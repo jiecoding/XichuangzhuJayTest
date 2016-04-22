@@ -19,15 +19,7 @@
 }
 */
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    
-    [self createSubViews];
-    
-    return self;
-    
-}
+
 
 - (void)createSubViews
 {
@@ -54,7 +46,7 @@
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:text attributes:@{NSParagraphStyleAttributeName: paragraphStyle}];
     
     authorLabel.attributedText = attributedString;
-    
+    authorLabel.text = self.quote.author;
     [self addSubview:authorLabel];
     
     [authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,6 +57,22 @@
     
     
     
+    
+}
+
+- (instancetype)initWithQuote:(XCZQuote *)quote
+{
+    self = [super init];
+    if(!self)
+    {
+        return nil;
+    }
+    
+    self.quote = quote;
+    
+    [self createSubViews];
+    
+    return self;
     
 }
 

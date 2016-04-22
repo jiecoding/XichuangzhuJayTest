@@ -8,6 +8,8 @@
 
 #import "XCZQuoteDraggableView.h"
 #import <Masonry.h>
+#import "XCZQuote.h"
+
 
 #define ACTION_MARGIN 80 // distance from center where the action applies. Higher = swipe further in order for the action to be called
 #define SCALE_STRENGTH 4 // how quickly the card shrinks. Higher = slower shrinking
@@ -37,9 +39,11 @@
     // Drawing code
 }
 */
-- (instancetype)initWithFrame:(CGRect)frame
+
+
+- (instancetype)initWithQuote:(XCZQuote *)quote
 {
-    self  = [super initWithFrame:frame];
+    self = [super initWithQuote:quote];
     if(!self)
     {
         return nil;
@@ -52,9 +56,8 @@
     [self addGestureRecognizer:panGestureRecognizer];
     
     return self;
+    
 }
-
- 
 
 - (void)panned:(UIPanGestureRecognizer *)gestureRecognizer
 {
@@ -93,7 +96,7 @@
             CGAffineTransform transform = CGAffineTransformMakeRotation(rotationAngel);
             
             //缩放
-            CGFloat scale = MAX(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
+           CGFloat scale = MAX(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
             
             CGAffineTransform scaleTransform = CGAffineTransformScale(transform, scale, scale);
 

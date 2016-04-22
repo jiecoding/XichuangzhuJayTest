@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XCZQuote.h"
 @interface XCZQuoteView : UIView
+@property (strong, nonatomic) XCZQuote *quote;
+
+- (instancetype)initWithQuote:(XCZQuote *)quote;
 
 
 @end

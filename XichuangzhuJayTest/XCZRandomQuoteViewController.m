@@ -56,11 +56,10 @@
         randomQuote = [XCZQuote getRandomQuoteExcept:self.quoteIds];
         
     }
+    NSLog(@"数据库里存的作者:%@",randomQuote.author);
     
-    
-    
-    XCZQuoteDraggableView *quoteDraggableView = [[XCZQuoteDraggableView alloc] initWithFrame:CGRectMake(40,100, 350, 500)];
-    
+    XCZQuoteDraggableView *quoteDraggableView = [[XCZQuoteDraggableView alloc] initWithQuote:randomQuote];
+    quoteDraggableView.frame = CGRectMake(40,100, 350, 500);
     if(self.quoteIds.count == 10)
     {
         [self.quoteIds removeObjectAtIndex:0];

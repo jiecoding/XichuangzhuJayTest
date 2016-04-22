@@ -8,6 +8,10 @@
 
 #import "XCZAppDelegate.h"
 #import "XCZRandomQuoteViewController.h"
+
+#define LocalizedString(key) [[LocalizeHelper sharedLocalSystem] localizedStringForKey:(key)]
+
+
 @interface XCZAppDelegate ()
 
 @end
@@ -25,7 +29,7 @@
     
     UINavigationController *qouteNavVC = [[UINavigationController alloc] initWithRootViewController:qouteVC];
     
-    qouteNavVC.title= @"摘录";
+    
     
     self.window.rootViewController = qouteNavVC;
     

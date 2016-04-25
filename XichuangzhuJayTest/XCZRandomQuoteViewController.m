@@ -12,6 +12,7 @@
 #import "XCZQuoteDraggableView.h"
 #import <Masonry.h>
 #import "XCZQuote.h"
+#import "Constants.h"
 @interface XCZRandomQuoteViewController ()
 
 
@@ -40,7 +41,6 @@
 
     [self setupNavigationBar];
     
-    
 }
 
 
@@ -49,14 +49,13 @@
     XCZQuote *randomQuote;
     
     if (self.quoteIds.count == 0) {
-        randomQuote = [XCZQuote getRandomQuote];
         
+        randomQuote = [XCZQuote getRandomQuote];
         
     } else {
         randomQuote = [XCZQuote getRandomQuoteExcept:self.quoteIds];
-        
     }
-    NSLog(@"数据库里存的作者:%@",randomQuote.author);
+    DLog(@"数据库里存的作者:%@  quote :%@",randomQuote.author,randomQuote.quote);
     
     XCZQuoteDraggableView *quoteDraggableView = [[XCZQuoteDraggableView alloc] initWithQuote:randomQuote];
     quoteDraggableView.frame = CGRectMake(40,100, 350, 500);
@@ -69,8 +68,10 @@
     quoteDraggableView.center = self.view.center;
     
     [self.view addSubview:quoteDraggableView];
-    
 
+    
+    
+    
 }
 
 - (void)createViews

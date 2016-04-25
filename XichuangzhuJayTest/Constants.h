@@ -31,4 +31,10 @@
 #define XCZQuoteFontChangedNotification @"XCZQuoteFontChangedNotification"
 #define XCZChineseKindChangedNotification @"XCZChineseKindChangedNotification"
 
+#ifdef DEBUG
+#define DLog(...) NSLog(__VA_ARGS__)
+#else
+#define XBLog(...)
+#endif
+
 #endif

@@ -65,5 +65,35 @@
     
 }
 
+- (NSArray *)pieces
+{
+    if(!_pieces)
+    {
+       __block NSInteger prevLocation = 0 ;
+        
+        NSMutableArray *results = [NSMutableArray new];
+
+        NSString *pattern = @"[，。：；？！、]";
+        
+        NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+        
+        NSRange range = NSMakeRange(0, [self.quote length]);
+        
+        [expression enumerateMatchesInString:self.quote options:0 range:range usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+            
+            NSRange range = [result rangeAtIndex:0];
+            NSString *quoteText = [self.quote substringWithRange:NSMakeRange(prevLocation,range.location - prevLocation)];
+            
+            [results addObject:quoteText];
+            
+             prevLocation = range.location + 1;
+            
+        }];
+        _pieces = results;
+    }
+    
+    return _pieces;
+}
+
 
 @end

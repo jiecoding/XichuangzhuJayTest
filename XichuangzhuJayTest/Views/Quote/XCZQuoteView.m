@@ -9,6 +9,7 @@
 #import "XCZQuoteView.h"
 #import <Masonry.h>
 #import "Constants.h"
+
 @implementation XCZQuoteView
 
 /*
@@ -31,22 +32,22 @@
         make.left.equalTo(self).offset([self logoHorizonalGap]);
         make.bottom.equalTo(self).offset(-[self logoVerticalGap]);
     }];
-    
  
-
     UILabel *authorLabel = [UILabel new];
-    NSString *text = @"李\n白";
+  
+//    NSString *text = @"李\n白";
+    NSString *text = [self createVerticalString:@"李白"];
+    
     authorLabel.numberOfLines = text.length;
-    
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
     paragraphStyle.lineSpacing = 2;
     
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:text attributes:@{NSParagraphStyleAttributeName: paragraphStyle}];
     
     authorLabel.attributedText = attributedString;
-    authorLabel.text = self.quote.author;
+    authorLabel.text = [self createVerticalString:self.quote.author];
     [self addSubview:authorLabel];
     
     [authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -55,9 +56,178 @@
         make.centerX.equalTo(logoView);
     }];
     
+    [self createQuoteLabels];
+    
+    UILabel *prevLabel;
+    
+    for (int i = 0; i < self.quoteLabels.count; i++) {
+        UILabel *label = self.quoteLabels[i];
+        
+        [self addSubview:label];
+        
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self).offset([self quoteTopMargin]);
+        }];
+        
+        if (i == 0) {
+            [label mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(self).offset(-[self quoteRightMargin]);
+            }];
+        } else {
+            [label mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(prevLabel.mas_left).offset(-[self quoteHorizonalGap]);
+            }];
+        }
+        
+        prevLabel = label;
+    }
+    
+
+  
     
     
+}
+
+
+// 水平间距
+- (CGFloat)quoteHorizonalGap
+{
+    // 华文仿宋
+    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"QuoteFont"] isEqualToString:@"STFangsong"]) {
+        if (IS_IPHONE_4_OR_LESS) {
+            return 9;
+        } else if (IS_IPHONE_5) {
+            return 10;
+        } else if (IS_IPHONE_6) {
+            return 11;
+        } else {
+            return 12;
+        }
+    } else {
+        // 文悦仿宋
+        if (IS_IPHONE_4_OR_LESS) {
+            return 11;
+        } else if (IS_IPHONE_5) {
+            return 12;
+        } else if (IS_IPHONE_6) {
+            return 13;
+        } else {
+            return 14;
+        }
+    }
+}
+
+/**
+ *  右边距
+ *
+ *  @return
+ */
+- (CGFloat)quoteRightMargin
+{
+    if (IS_IPHONE_4_OR_LESS) {
+        return 26;
+    } else if (IS_IPHONE_5) {
+        return 28;
+    } else if (IS_IPHONE_6) {
+        return 33;
+    } else {
+        return 36;
+    }
+}
+
+/**
+ *  上边距
+ *
+ *  @return
+ */
+- (CGFloat)quoteTopMargin
+{
+    if (IS_IPHONE_4_OR_LESS) {
+        return 26;
+    } else if (IS_IPHONE_5) {
+        return 28;
+    } else if (IS_IPHONE_6) {
+        return 33;
+    } else {
+        return 36;
+    }
+}
+
+
+- (void)createQuoteLabels
+{
+    [self.quoteLabels removeAllObjects];
     
+    for(NSString *piece in self.quote.pieces){
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        //?
+        paragraphStyle.lineSpacing =  0.6;
+        
+        UILabel *quoteLabel = [self createVerticalLabel:piece attributes:@{NSParagraphStyleAttributeName: paragraphStyle}];
+
+        quoteLabel.font = [UIFont fontWithName:XCZFontHWFangsong size:[self quoteFontSize]];
+        [self.quoteLabels addObject:quoteLabel];
+
+    }
+
+}
+
+
+// 字体大小
+- (CGFloat)quoteFontSize
+{
+    // 华文仿宋
+    if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"QuoteFont"] isEqualToString:@"STFangsong"]) {
+        if (IS_IPHONE_4_OR_LESS) {
+            return 23;
+        } else if (IS_IPHONE_5) {
+            return 25;
+        } else if (IS_IPHONE_6) {
+            return 28;
+        } else {
+            return 31;
+        }
+    } else {
+        // 文悦仿宋
+        if (IS_IPHONE_4_OR_LESS) {
+            return 19;
+        } else if (IS_IPHONE_5) {
+            return 21;
+        } else if (IS_IPHONE_6) {
+            return 24;
+        } else {
+            return 27;
+        }
+    }
+}
+
+
+- (UILabel *)createVerticalLabel:(NSString *)text attributes:(NSDictionary *)attributes
+{
+    UILabel *label = [UILabel new];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:[self createVerticalString:text] attributes:attributes];
+    label.numberOfLines = text.length;
+    label.attributedText = attributedString;
+    return label;
+}
+
+
+- (NSMutableArray *)quoteLabels
+{
+    if(!_quoteLabels)
+    {
+        _quoteLabels = [NSMutableArray new];
+    }
+    return _quoteLabels;
+}
+
+- (NSString *)createVerticalString:(NSString *)text
+{
+    NSMutableArray *letterArray = [NSMutableArray new];
+    [text enumerateSubstringsInRange:NSMakeRange(0, [text length]) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
+        [letterArray addObject:substring];
+    }];
+    return [letterArray componentsJoinedByString:@"\n"];
 }
 
 - (instancetype)initWithQuote:(XCZQuote *)quote

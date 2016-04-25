@@ -55,6 +55,7 @@
     } else {
         randomQuote = [XCZQuote getRandomQuoteExcept:self.quoteIds];
     }
+    if(self.quoteIds > 0 ){
     DLog(@"数据库里存的作者:%@  quote :%@",randomQuote.author,randomQuote.quote);
     
     XCZQuoteDraggableView *quoteDraggableView = [[XCZQuoteDraggableView alloc] initWithQuote:randomQuote];
@@ -70,6 +71,7 @@
     [self.view addSubview:quoteDraggableView];
 
     
+    }
     
     
 }

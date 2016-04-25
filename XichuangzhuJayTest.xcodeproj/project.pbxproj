@@ -72,6 +72,9 @@
 		CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		CB781C851CC8C84700F2C823 /* XCZQuoteDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuoteDraggableView.h; sourceTree = "<group>"; };
 		CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuoteDraggableView.m; sourceTree = "<group>"; };
+		CB9A95FE1CCDC66000FACC17 /* 华文仿宋.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文仿宋.ttf"; sourceTree = "<group>"; };
+		CB9A95FF1CCDC66000FACC17 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		CB9A96001CCDC66000FACC17 /* Wyue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wyue.otf; sourceTree = "<group>"; };
 		CBB9ABD01CCA11160074B112 /* XCZUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZUtils.h; sourceTree = "<group>"; };
 		CBB9ABD11CCA11160074B112 /* XCZUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZUtils.m; sourceTree = "<group>"; };
 		CBB9ABD31CCA1F0B0074B112 /* xcz.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = xcz.db; sourceTree = "<group>"; };
@@ -156,6 +159,9 @@
 		CB53A6DE1CC78FAC00DC01F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CB9A95FE1CCDC66000FACC17 /* 华文仿宋.ttf */,
+				CB9A95FF1CCDC66000FACC17 /* FontAwesome.ttf */,
+				CB9A96001CCDC66000FACC17 /* Wyue.otf */,
 				CBB9ABD31CCA1F0B0074B112 /* xcz.db */,
 				CB53A6DF1CC78FAC00DC01F5 /* main.m */,
 			);

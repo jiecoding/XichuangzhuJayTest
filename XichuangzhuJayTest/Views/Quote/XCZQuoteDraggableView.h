@@ -8,6 +8,27 @@
 
 #import <UIKit/UIKit.h>
 #import "XCZQuoteView.h"
+
+@protocol XCZQuoteDraggableDelegate  <XCZQuoteViewDelegate>
+
+- (void)didDragLeft:(UIView *)quoteView;
+
+- (void)didDragRight:(UIView *)factor;
+
+
+@optional
+- (void)dragging:(CGFloat)factor;
+- (void)willBackToCenter:(CGFloat)factor;
+
+@end
+
+
 @interface XCZQuoteDraggableView : XCZQuoteView
+
+@property (weak,nonatomic)id <XCZQuoteDraggableDelegate> deleagte;
+
+- (void)dragLeft;
+
+- (void)dragRight;
 
 @end

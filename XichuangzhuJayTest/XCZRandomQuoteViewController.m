@@ -13,7 +13,15 @@
 #import <Masonry.h>
 #import "XCZQuote.h"
 #import "Constants.h"
-@interface XCZRandomQuoteViewController ()
+#import "XCZQuoteDraggableView.h"
+
+static CGFloat const SecondQuoteViewOriginalScale = 0.97;
+
+
+@interface XCZRandomQuoteViewController ()<XCZQuoteDraggableDelegate>
+
+@property (strong, nonatomic) XCZQuoteDraggableView *firstQuoteView;
+@property (strong, nonatomic) XCZQuoteDraggableView *secondQuoteView;
 
 
 @property (strong, nonatomic) NSMutableArray *quoteIds;
@@ -43,6 +51,11 @@
     
 }
 
+- (void)dragging:(CGFloat)factor
+{
+    CGFloat scale = SecondQuoteViewOriginalScale + (1 - SecondQuoteViewOriginalScale) * factor;
+    self.secondQuoteView.transform = CGAffineTransformScale(CGAffineTransformIdentity, scale, scale);
+}
 
 - (void)loadQuoteView
 {
@@ -59,7 +72,10 @@
     DLog(@"数据库里存的作者:%@  quote :%@",randomQuote.author,randomQuote.quote);
     
     XCZQuoteDraggableView *quoteDraggableView = [[XCZQuoteDraggableView alloc] initWithQuote:randomQuote];
-    quoteDraggableView.frame = CGRectMake(40,100, 350, 500);
+    
+        quoteDraggableView.deleagte =self;
+    
+        quoteDraggableView.frame = CGRectMake(40,100, 350, 500);
     if(self.quoteIds.count == 10)
     {
         [self.quoteIds removeObjectAtIndex:0];
@@ -75,6 +91,15 @@
     
     
 }
+
+
+- (void)willBackToCenter:(CGFloat)factor
+{
+    [UIView animateWithDuration:.3 animations:^{
+        self.secondQuoteView.transform = CGAffineTransformScale(CGAffineTransformIdentity, SecondQuoteViewOriginalScale, SecondQuoteViewOriginalScale);
+    }];
+}
+
 
 - (void)createViews
 {
@@ -138,6 +163,19 @@
     
     return _quoteIds;
 }
+
+- (void)didDragRight:(UIView *)quoteView
+{
+    [self loadQuoteView];
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+}
+
+- (void)didDragLeft:(UIView *)quoteView
+{
+    [self loadQuoteView];
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+}
+
 
 
 

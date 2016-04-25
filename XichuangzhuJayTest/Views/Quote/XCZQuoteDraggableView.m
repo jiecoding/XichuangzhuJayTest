@@ -41,6 +41,7 @@
 */
 
 
+
 - (instancetype)initWithQuote:(XCZQuote *)quote
 {
     self = [super initWithQuote:quote];
@@ -49,7 +50,7 @@
         return nil;
     }
     
-    self.backgroundColor = [UIColor orangeColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panned:)];
     
@@ -58,6 +59,7 @@
     return self;
     
 }
+
 
 - (void)panned:(UIPanGestureRecognizer *)gestureRecognizer
 {
@@ -102,6 +104,11 @@
 
             self.transform = scaleTransform;
             
+//            if ([self.deleagte respondsToSelector:@selector(dragging:)]) {
+//                [self.deleagte dragging:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
+//            }
+//            
+            
             break;
         }
             
@@ -123,20 +130,39 @@
     //判断向右滑动大于80距离 就做处理
     if(self.xFromCenter > ACTION_MARGIN){
     //y 坐标 当前移动到的y坐标 ＋ 本类view中心点的y 坐标
-    CGPoint finishPoint = CGPointMake(500, self.yFromCenter + self.originalPoint.y);
+    CGPoint finishPoint = CGPointMake(500, 2* self.yFromCenter + self.originalPoint.y);
     
     [UIView animateWithDuration:0.3 animations:^{
+        
         self.center = finishPoint;
-        
-//        [self removeFromSuperview];
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+        //用来判断是否有以某个名字命名的方法(被封装在一个selector的对象里传递)
+        if(self.deleagte){
+            if([self.deleagte respondsToSelector:@selector(didDragRight:)])
+            {
+                [self.deleagte didDragRight:self];
+                
+            }
+        }
+     
     }];
-        
     }
     else if (self.xFromCenter < -ACTION_MARGIN)
     {
         CGPoint finishPoint = CGPointMake(-500, self.yFromCenter + self.originalPoint.y);
         [UIView animateWithDuration:0.3 animations:^{
             self.center = finishPoint;
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+            if(self.deleagte)
+            {
+                if([self.deleagte respondsToSelector:@selector(didDragLeft:)])
+                {
+                    [self.deleagte didDragLeft:self];
+                }
+            }
+            
         }];
     }
     else
@@ -146,11 +172,65 @@
             self.center = self.originalPoint;
             self.transform = CGAffineTransformMakeRotation(0);
         }];
+        if([self.deleagte respondsToSelector:@selector(willBackToCenter:)])
+        {
+            [self.deleagte willBackToCenter:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
+        }
     }
     
-    
-    
 }
+
+
+
+
+#pragma mark - Public Methods
+
+/**
+ *  程序控制向左滑
+ */
+- (void)dragLeft
+{
+    
+    CGPoint finishPoint = CGPointMake(-600, self.center.y - 50);
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         self.center = finishPoint;
+                         self.transform = CGAffineTransformMakeRotation(-1);
+                     } completion:^(BOOL complete){
+                         [self removeFromSuperview];
+                         
+                         if (self.deleagte) {
+                             if ([self.deleagte respondsToSelector:@selector(didDragLeft:)]) {
+                                 [self.deleagte didDragLeft:self];
+                             }
+                         }
+                     }];
+}
+
+/**
+ *  程序控制向右滑
+ */
+- (void)dragRight
+{
+    
+    CGPoint finishPoint = CGPointMake(600, self.center.y - 50);
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         self.center = finishPoint;
+                         self.transform = CGAffineTransformMakeRotation(1);
+                     } completion:^(BOOL complete){
+                         [self removeFromSuperview];
+                         
+                         if (self.deleagte) {
+                             if ([self.deleagte respondsToSelector:@selector(didDragRight:)]) {
+                                 [self.deleagte didDragRight:self];
+                             }
+                         }
+                     }];
+}
+
+
+
 
 
 @end

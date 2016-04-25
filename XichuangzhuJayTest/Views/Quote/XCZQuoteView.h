@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "XCZQuote.h"
+
+@protocol XCZQuoteViewDelegate <NSObject>
+
+- (void)quoteViewPressed:(XCZQuote *)quote;
+
+@end
+
 @interface XCZQuoteView : UIView
+
+
 @property (strong, nonatomic) XCZQuote *quote;
 @property (strong, nonatomic) NSMutableArray *quoteLabels;
 

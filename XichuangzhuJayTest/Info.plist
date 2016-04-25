@@ -26,6 +26,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome.ttf</string>
+		<string>华文仿宋.ttf</string>
+		<string>Wyue.otf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

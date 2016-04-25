@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B57C5581E556B5699A0F54D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C0547A9963EA001EAFE803 /* libPods.a */; };
+		CB29B0761CCDEE5400455ABB /* LocalizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29B0741CCDEE5400455ABB /* LocalizeHelper.m */; };
+		CB4884AF1CCE0DAA00D80D38 /* xcz.db in Resources */ = {isa = PBXBuildFile; fileRef = CB4884AE1CCE0DAA00D80D38 /* xcz.db */; };
+		CB4884B31CCE0E9700D80D38 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4884B01CCE0E9700D80D38 /* FontAwesome.ttf */; };
+		CB4884B41CCE0E9700D80D38 /* 华文仿宋.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4884B11CCE0E9700D80D38 /* 华文仿宋.ttf */; };
+		CB4884B51CCE0E9700D80D38 /* Wyue.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4884B21CCE0E9700D80D38 /* Wyue.otf */; };
 		CB53A6E01CC78FAC00DC01F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB53A6DF1CC78FAC00DC01F5 /* main.m */; };
 		CB53A6E31CC78FAC00DC01F5 /* XCZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB53A6E21CC78FAC00DC01F5 /* XCZAppDelegate.m */; };
 		CB53A6E61CC78FAC00DC01F5 /* XCZRandomQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB53A6E51CC78FAC00DC01F5 /* XCZRandomQuoteViewController.m */; };
@@ -21,6 +26,10 @@
 		CB781C801CC878B300F2C823 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7B1CC878B300F2C823 /* UIColor+Helper.m */; };
 		CB781C811CC878B300F2C823 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */; };
 		CB781C871CC8C84700F2C823 /* XCZQuoteDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */; };
+		CBB8FC6E1CCDF74E00D19747 /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8FC6D1CCDF74E00D19747 /* KSCrash.framework */; };
+		CBB8FC701CCDF78500D19747 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8FC6F1CCDF78400D19747 /* libc++.tbd */; };
+		CBB8FC721CCDF78E00D19747 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8FC711CCDF78E00D19747 /* libz.tbd */; };
+		CBB8FC741CCDF79600D19747 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8FC731CCDF79600D19747 /* SystemConfiguration.framework */; };
 		CBB9ABD21CCA11160074B112 /* XCZUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB9ABD11CCA11160074B112 /* XCZUtils.m */; };
 		CBD1EEA21CC9C4C00078ADF8 /* XCZQuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1EEA11CC9C4C00078ADF8 /* XCZQuoteView.m */; };
 		CBD1EEA81CCA0D2A0078ADF8 /* XCZQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1EEA71CCA0D2A0078ADF8 /* XCZQuote.m */; };
@@ -46,6 +55,12 @@
 /* Begin PBXFileReference section */
 		049A4627754C494DEE7957A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0B5DD014593BCF1555B3022A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CB29B0741CCDEE5400455ABB /* LocalizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizeHelper.m; sourceTree = "<group>"; };
+		CB29B0751CCDEE5400455ABB /* LocalizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizeHelper.h; sourceTree = "<group>"; };
+		CB4884AE1CCE0DAA00D80D38 /* xcz.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = xcz.db; sourceTree = "<group>"; };
+		CB4884B01CCE0E9700D80D38 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		CB4884B11CCE0E9700D80D38 /* 华文仿宋.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文仿宋.ttf"; sourceTree = "<group>"; };
+		CB4884B21CCE0E9700D80D38 /* Wyue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wyue.otf; sourceTree = "<group>"; };
 		CB53A6DB1CC78FAC00DC01F5 /* XichuangzhuJayTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XichuangzhuJayTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB53A6DF1CC78FAC00DC01F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CB53A6E11CC78FAC00DC01F5 /* XCZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCZAppDelegate.h; sourceTree = "<group>"; };
@@ -72,12 +87,12 @@
 		CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		CB781C851CC8C84700F2C823 /* XCZQuoteDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuoteDraggableView.h; sourceTree = "<group>"; };
 		CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuoteDraggableView.m; sourceTree = "<group>"; };
-		CB9A95FE1CCDC66000FACC17 /* 华文仿宋.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文仿宋.ttf"; sourceTree = "<group>"; };
-		CB9A95FF1CCDC66000FACC17 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		CB9A96001CCDC66000FACC17 /* Wyue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wyue.otf; sourceTree = "<group>"; };
+		CBB8FC6D1CCDF74E00D19747 /* KSCrash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSCrash.framework; sourceTree = "<group>"; };
+		CBB8FC6F1CCDF78400D19747 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CBB8FC711CCDF78E00D19747 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CBB8FC731CCDF79600D19747 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CBB9ABD01CCA11160074B112 /* XCZUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZUtils.h; sourceTree = "<group>"; };
 		CBB9ABD11CCA11160074B112 /* XCZUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZUtils.m; sourceTree = "<group>"; };
-		CBB9ABD31CCA1F0B0074B112 /* xcz.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = xcz.db; sourceTree = "<group>"; };
 		CBD1EEA01CC9C4C00078ADF8 /* XCZQuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuoteView.h; sourceTree = "<group>"; };
 		CBD1EEA11CC9C4C00078ADF8 /* XCZQuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuoteView.m; sourceTree = "<group>"; };
 		CBD1EEA31CC9F78B0078ADF8 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -91,6 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBB8FC741CCDF79600D19747 /* SystemConfiguration.framework in Frameworks */,
+				CBB8FC721CCDF78E00D19747 /* libz.tbd in Frameworks */,
+				CBB8FC701CCDF78500D19747 /* libc++.tbd in Frameworks */,
+				CBB8FC6E1CCDF74E00D19747 /* KSCrash.framework in Frameworks */,
 				B57C5581E556B5699A0F54D7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,10 +178,11 @@
 		CB53A6DE1CC78FAC00DC01F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB9A95FE1CCDC66000FACC17 /* 华文仿宋.ttf */,
-				CB9A95FF1CCDC66000FACC17 /* FontAwesome.ttf */,
-				CB9A96001CCDC66000FACC17 /* Wyue.otf */,
-				CBB9ABD31CCA1F0B0074B112 /* xcz.db */,
+				CB4884AE1CCE0DAA00D80D38 /* xcz.db */,
+				CB4884B01CCE0E9700D80D38 /* FontAwesome.ttf */,
+				CB4884B11CCE0E9700D80D38 /* 华文仿宋.ttf */,
+				CB4884B21CCE0E9700D80D38 /* Wyue.otf */,
+				CBB8FC6D1CCDF74E00D19747 /* KSCrash.framework */,
 				CB53A6DF1CC78FAC00DC01F5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -232,6 +252,8 @@
 			children = (
 				CBB9ABD01CCA11160074B112 /* XCZUtils.h */,
 				CBB9ABD11CCA11160074B112 /* XCZUtils.m */,
+				CB29B0741CCDEE5400455ABB /* LocalizeHelper.m */,
+				CB29B0751CCDEE5400455ABB /* LocalizeHelper.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -257,6 +279,9 @@
 		DDFB73B91B89EE7BF608C8E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBB8FC731CCDF79600D19747 /* SystemConfiguration.framework */,
+				CBB8FC711CCDF78E00D19747 /* libz.tbd */,
+				CBB8FC6F1CCDF78400D19747 /* libc++.tbd */,
 				D4C0547A9963EA001EAFE803 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -370,8 +395,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB53A6EE1CC78FAC00DC01F5 /* LaunchScreen.storyboard in Resources */,
+				CB4884B41CCE0E9700D80D38 /* 华文仿宋.ttf in Resources */,
+				CB4884B31CCE0E9700D80D38 /* FontAwesome.ttf in Resources */,
 				CB53A6EB1CC78FAC00DC01F5 /* Assets.xcassets in Resources */,
 				CB53A6E91CC78FAC00DC01F5 /* Main.storyboard in Resources */,
+				CB4884AF1CCE0DAA00D80D38 /* xcz.db in Resources */,
+				CB4884B51CCE0E9700D80D38 /* Wyue.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +475,7 @@
 			files = (
 				CB781C7F1CC878B300F2C823 /* NSString+Helper.m in Sources */,
 				CB781C871CC8C84700F2C823 /* XCZQuoteDraggableView.m in Sources */,
+				CB29B0761CCDEE5400455ABB /* LocalizeHelper.m in Sources */,
 				CB53A6E61CC78FAC00DC01F5 /* XCZRandomQuoteViewController.m in Sources */,
 				CB781C811CC878B300F2C823 /* UIImage+Helper.m in Sources */,
 				CBD1EEA81CCA0D2A0078ADF8 /* XCZQuote.m in Sources */,
@@ -598,6 +628,10 @@
 			baseConfigurationReference = 0B5DD014593BCF1555B3022A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XichuangzhuJayTest",
+				);
 				INFOPLIST_FILE = XichuangzhuJayTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mingren.XichuangzhuJayTest;
@@ -610,6 +644,10 @@
 			baseConfigurationReference = 049A4627754C494DEE7957A8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XichuangzhuJayTest",
+				);
 				INFOPLIST_FILE = XichuangzhuJayTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mingren.XichuangzhuJayTest;

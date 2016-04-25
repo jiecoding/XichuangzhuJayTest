@@ -8,7 +8,9 @@
 
 #import "XCZAppDelegate.h"
 #import "XCZRandomQuoteViewController.h"
-
+#import "Constants.h"
+#import "LocalizeHelper.h"
+#import <KSCrash/KSCrashInstallationStandard.h>
 #define LocalizedString(key) [[LocalizeHelper sharedLocalSystem] localizedStringForKey:(key)]
 
 
@@ -22,6 +24,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *factorySettings = @{@"SimplifiedChinese": @NO, @"QuoteFont": XCZFontWYFangsong};
+    [defaults registerDefaults:factorySettings];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SimplifiedChinese"]) {
+        LocalizationSetLanguage(@"zh-Hans");
+    } else {
+        LocalizationSetLanguage(@"zh-Hant");
+    }
+
+
+    
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -32,6 +47,13 @@
     
     
     self.window.rootViewController = qouteNavVC;
+    
+    
+    //http://bughd.com/project/571dbf63a1de524a5700001c bug分析工具
+//    KSCrashInstallationStandard* installation = [KSCrashInstallationStandard sharedInstance];
+//    installation.url = [NSURL URLWithString:@"https://collector.bughd.com/kscrash?key=774f3f6389216bf24f6c4e1ff4e1fd9b"];
+//    [installation install];
+//    [installation sendAllReportsWithCompletion:nil];
     
     
     return YES;

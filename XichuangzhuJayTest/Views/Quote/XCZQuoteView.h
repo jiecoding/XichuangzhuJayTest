@@ -17,10 +17,12 @@
 
 @interface XCZQuoteView : UIView
 
+@property (nonatomic,weak) id <XCZQuoteViewDelegate> delegate;
 
 @property (strong, nonatomic) XCZQuote *quote;
 @property (strong, nonatomic) NSMutableArray *quoteLabels;
 
+- (void)adjustSize;
 
 - (instancetype)initWithQuote:(XCZQuote *)quote;
 

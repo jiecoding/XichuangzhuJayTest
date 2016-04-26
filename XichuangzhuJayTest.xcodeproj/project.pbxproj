@@ -33,6 +33,7 @@
 		CBB9ABD21CCA11160074B112 /* XCZUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB9ABD11CCA11160074B112 /* XCZUtils.m */; };
 		CBD1EEA21CC9C4C00078ADF8 /* XCZQuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1EEA11CC9C4C00078ADF8 /* XCZQuoteView.m */; };
 		CBD1EEA81CCA0D2A0078ADF8 /* XCZQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1EEA71CCA0D2A0078ADF8 /* XCZQuote.m */; };
+		CBD44D461CCF11D500816B9B /* XCZWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD44D451CCF11D500816B9B /* XCZWorkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		CBD1EEA31CC9F78B0078ADF8 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CBD1EEA61CCA0D2A0078ADF8 /* XCZQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuote.h; sourceTree = "<group>"; };
 		CBD1EEA71CCA0D2A0078ADF8 /* XCZQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuote.m; sourceTree = "<group>"; };
+		CBD44D441CCF11D500816B9B /* XCZWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZWorkViewController.h; sourceTree = "<group>"; };
+		CBD44D451CCF11D500816B9B /* XCZWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZWorkViewController.m; sourceTree = "<group>"; };
 		D4C0547A9963EA001EAFE803 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -224,6 +227,8 @@
 		CB781C821CC8C79000F2C823 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CBD44D441CCF11D500816B9B /* XCZWorkViewController.h */,
+				CBD44D451CCF11D500816B9B /* XCZWorkViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				CB29B0761CCDEE5400455ABB /* LocalizeHelper.m in Sources */,
 				CB53A6E61CC78FAC00DC01F5 /* XCZRandomQuoteViewController.m in Sources */,
 				CB781C811CC878B300F2C823 /* UIImage+Helper.m in Sources */,
+				CBD44D461CCF11D500816B9B /* XCZWorkViewController.m in Sources */,
 				CBD1EEA81CCA0D2A0078ADF8 /* XCZQuote.m in Sources */,
 				CBB9ABD21CCA11160074B112 /* XCZUtils.m in Sources */,
 				CB53A6E31CC78FAC00DC01F5 /* XCZAppDelegate.m in Sources */,

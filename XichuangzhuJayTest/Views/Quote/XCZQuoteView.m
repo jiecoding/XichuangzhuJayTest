@@ -20,7 +20,45 @@
 }
 */
 
+- (instancetype)initWithQuote:(XCZQuote *)quote
+{
+    self = [super init];
+    if(!self)
+    {
+        return nil;
+    }
+    
+    self.quote = quote;
+    
+    self.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quoteViewPressed)];
+    
+    [self addGestureRecognizer:tapGesture];
+    
+    [self createSubViews];
+    
+    return self;
+    
+}
 
+- (void)quoteViewPressed
+{
+    //-(BOOL) respondsToSelector: selector 用来判断是否有以某个名字命名的方法(被封装在一个selector的对象里传递)
+   
+//    if(self.delegate && [self.delegate respondsToSelector:@selector(quoteViewPressed:)])
+//    {
+//        [UIView animateWithDuration:.01 animations:^{
+            self.transform = CGAffineTransformScale(CGAffineTransformIdentity, .985, .985);
+//        } completion:^(BOOL finished) {
+////            [UIView ];
+//            
+//        }];
+//    
+//    }
+    [self.delegate quoteViewPressed:self.quote];
+    
+}
 
 - (void)createSubViews
 {
@@ -238,21 +276,7 @@
     return [letterArray componentsJoinedByString:@"\n"];
 }
 
-- (instancetype)initWithQuote:(XCZQuote *)quote
-{
-    self = [super init];
-    if(!self)
-    {
-        return nil;
-    }
-    
-    self.quote = quote;
-    
-    [self createSubViews];
-    
-    return self;
-    
-}
+
 
 - (CGFloat)logoWidth
 {
@@ -299,6 +323,29 @@
     } else {
         return 19;
     }
+}
+
+
+- (void)adjustSize
+{
+    if(!self.superview)
+    {
+        return;
+    }
+    
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        if(IS_IPHONE_4_OR_LESS)
+        {
+            make.height.equalTo(self.superview).multipliedBy(.85);
+            make.width.equalTo(self.mas_height).multipliedBy(.75);
+        }
+        else
+        {
+            make.height.equalTo(self.superview).multipliedBy(.8);
+            make.width.equalTo(self.superview).multipliedBy(.8);
+        }
+    }];
+    
 }
 
 @end

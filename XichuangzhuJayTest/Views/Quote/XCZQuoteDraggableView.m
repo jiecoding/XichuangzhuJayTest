@@ -104,10 +104,10 @@
 
             self.transform = scaleTransform;
             
-//            if ([self.deleagte respondsToSelector:@selector(dragging:)]) {
-//                [self.deleagte dragging:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
-//            }
-//            
+            if ([self.deleagte respondsToSelector:@selector(dragging:)]) {
+                [self.deleagte dragging:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
+            }
+//
             
             break;
         }

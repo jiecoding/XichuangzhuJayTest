@@ -14,11 +14,12 @@
 #import "XCZQuote.h"
 #import "Constants.h"
 #import "XCZQuoteDraggableView.h"
+#import "XCZWorkViewController.h"
 
 static CGFloat const SecondQuoteViewOriginalScale = 0.97;
 
 
-@interface XCZRandomQuoteViewController ()<XCZQuoteDraggableDelegate>
+@interface XCZRandomQuoteViewController ()<XCZQuoteDraggableDelegate,XCZQuoteViewDelegate>
 
 @property (strong, nonatomic) XCZQuoteDraggableView *firstQuoteView;
 @property (strong, nonatomic) XCZQuoteDraggableView *secondQuoteView;
@@ -68,28 +69,57 @@ static CGFloat const SecondQuoteViewOriginalScale = 0.97;
     } else {
         randomQuote = [XCZQuote getRandomQuoteExcept:self.quoteIds];
     }
-    if(self.quoteIds > 0 ){
-    DLog(@"数据库里存的作者:%@  quote :%@",randomQuote.author,randomQuote.quote);
+ 
     
-    XCZQuoteDraggableView *quoteDraggableView = [[XCZQuoteDraggableView alloc] initWithQuote:randomQuote];
+    XCZQuoteDraggableView *quoteView = [[XCZQuoteDraggableView alloc] initWithQuote:randomQuote];
     
-        quoteDraggableView.deleagte =self;
+        quoteView.deleagte =self;
     
-        quoteDraggableView.frame = CGRectMake(40,100, 350, 500);
     if(self.quoteIds.count == 10)
     {
         [self.quoteIds removeObjectAtIndex:0];
     }
     [self.quoteIds addObject:[NSString stringWithFormat:@"%d",randomQuote.id]];
     
-    quoteDraggableView.center = self.view.center;
     
-    [self.view addSubview:quoteDraggableView];
+    if (!self.firstQuoteView) {
+        self.firstQuoteView = quoteView;
+        self.firstQuoteView.userInteractionEnabled = YES;
+        [self.view addSubview:quoteView];
+    } else {
+        if (self.secondQuoteView) {
+            self.firstQuoteView = self.secondQuoteView;
+            self.firstQuoteView.userInteractionEnabled = YES;
+            self.secondQuoteView = quoteView;
+        }
+        
+        self.secondQuoteView = quoteView;
+     
+        quoteView.transform = CGAffineTransformScale(CGAffineTransformIdentity, SecondQuoteViewOriginalScale, SecondQuoteViewOriginalScale);
+     
+        [self.view insertSubview:quoteView belowSubview:self.firstQuoteView];
+     }
+  
+//     [self.view addSubview:quoteView];
+    
+    [quoteView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];    
+//    quoteView.frame = CGRectMake(40,100, 350, 500);
+//    quoteView.center  = self.view.center;
+    [quoteView adjustSize];
+    
+    
+  
+}
 
-    
-    }
-    
-    
+#pragma mark - XCZQuoteViewDelegate
+
+- (void)quoteViewPressed:(XCZQuote *)quote
+{
+//    XCZWork *work = [XCZWork getById:quote.workId];
+    XCZWorkViewController *controller = [[XCZWorkViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

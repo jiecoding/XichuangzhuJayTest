@@ -56,7 +56,7 @@
 //        }];
 //    
 //    }
-    [self.delegate quoteViewPressed:self.quote];
+    [self.deleagte quoteViewPressed:self.quote];
     
 }
 

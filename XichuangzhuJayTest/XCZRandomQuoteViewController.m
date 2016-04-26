@@ -72,8 +72,8 @@ static CGFloat const SecondQuoteViewOriginalScale = 0.97;
  
     
     XCZQuoteDraggableView *quoteView = [[XCZQuoteDraggableView alloc] initWithQuote:randomQuote];
-    
-        quoteView.deleagte =self;
+    quoteView.quoteDragdeleagte = self;
+    quoteView.deleagte =self;
     
     if(self.quoteIds.count == 10)
     {

@@ -17,7 +17,7 @@
 
 @interface XCZQuoteView : UIView
 
-@property (nonatomic,weak) id <XCZQuoteViewDelegate> delegate;
+@property (nonatomic,weak) id <XCZQuoteViewDelegate> deleagte;
 
 @property (strong, nonatomic) XCZQuote *quote;
 @property (strong, nonatomic) NSMutableArray *quoteLabels;

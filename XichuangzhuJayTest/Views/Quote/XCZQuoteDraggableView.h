@@ -25,7 +25,7 @@
 
 @interface XCZQuoteDraggableView : XCZQuoteView
 
-@property (weak,nonatomic)id <XCZQuoteDraggableDelegate> deleagte;
+@property (weak,nonatomic)id <XCZQuoteDraggableDelegate> quoteDragdeleagte;
 
 - (void)dragLeft;
 

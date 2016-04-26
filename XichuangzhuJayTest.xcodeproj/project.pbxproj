@@ -26,6 +26,9 @@
 		CB781C801CC878B300F2C823 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7B1CC878B300F2C823 /* UIColor+Helper.m */; };
 		CB781C811CC878B300F2C823 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */; };
 		CB781C871CC8C84700F2C823 /* XCZQuoteDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */; };
+		CBA481301CCF208200133386 /* XCZCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4812F1CCF208200133386 /* XCZCollectionsViewController.m */; };
+		CBA481331CCF209900133386 /* XCZLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA481321CCF209900133386 /* XCZLibraryViewController.m */; };
+		CBA481361CCF20A700133386 /* XCZOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA481351CCF20A700133386 /* XCZOtherViewController.m */; };
 		CBB8FC6E1CCDF74E00D19747 /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8FC6D1CCDF74E00D19747 /* KSCrash.framework */; };
 		CBB8FC701CCDF78500D19747 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8FC6F1CCDF78400D19747 /* libc++.tbd */; };
 		CBB8FC721CCDF78E00D19747 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8FC711CCDF78E00D19747 /* libz.tbd */; };
@@ -88,6 +91,12 @@
 		CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		CB781C851CC8C84700F2C823 /* XCZQuoteDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuoteDraggableView.h; sourceTree = "<group>"; };
 		CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuoteDraggableView.m; sourceTree = "<group>"; };
+		CBA4812E1CCF208200133386 /* XCZCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZCollectionsViewController.h; sourceTree = "<group>"; };
+		CBA4812F1CCF208200133386 /* XCZCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZCollectionsViewController.m; sourceTree = "<group>"; };
+		CBA481311CCF209900133386 /* XCZLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZLibraryViewController.h; sourceTree = "<group>"; };
+		CBA481321CCF209900133386 /* XCZLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZLibraryViewController.m; sourceTree = "<group>"; };
+		CBA481341CCF20A700133386 /* XCZOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZOtherViewController.h; sourceTree = "<group>"; };
+		CBA481351CCF20A700133386 /* XCZOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZOtherViewController.m; sourceTree = "<group>"; };
 		CBB8FC6D1CCDF74E00D19747 /* KSCrash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSCrash.framework; sourceTree = "<group>"; };
 		CBB8FC6F1CCDF78400D19747 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CBB8FC711CCDF78E00D19747 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -229,6 +238,12 @@
 			children = (
 				CBD44D441CCF11D500816B9B /* XCZWorkViewController.h */,
 				CBD44D451CCF11D500816B9B /* XCZWorkViewController.m */,
+				CBA4812E1CCF208200133386 /* XCZCollectionsViewController.h */,
+				CBA4812F1CCF208200133386 /* XCZCollectionsViewController.m */,
+				CBA481311CCF209900133386 /* XCZLibraryViewController.h */,
+				CBA481321CCF209900133386 /* XCZLibraryViewController.m */,
+				CBA481341CCF20A700133386 /* XCZOtherViewController.h */,
+				CBA481351CCF20A700133386 /* XCZOtherViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -478,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA481301CCF208200133386 /* XCZCollectionsViewController.m in Sources */,
 				CB781C7F1CC878B300F2C823 /* NSString+Helper.m in Sources */,
 				CB781C871CC8C84700F2C823 /* XCZQuoteDraggableView.m in Sources */,
 				CB29B0761CCDEE5400455ABB /* LocalizeHelper.m in Sources */,
@@ -486,9 +502,11 @@
 				CBD44D461CCF11D500816B9B /* XCZWorkViewController.m in Sources */,
 				CBD1EEA81CCA0D2A0078ADF8 /* XCZQuote.m in Sources */,
 				CBB9ABD21CCA11160074B112 /* XCZUtils.m in Sources */,
+				CBA481361CCF20A700133386 /* XCZOtherViewController.m in Sources */,
 				CB53A6E31CC78FAC00DC01F5 /* XCZAppDelegate.m in Sources */,
 				CBD1EEA21CC9C4C00078ADF8 /* XCZQuoteView.m in Sources */,
 				CB781C7E1CC878B300F2C823 /* NSArray+Helper.m in Sources */,
+				CBA481331CCF209900133386 /* XCZLibraryViewController.m in Sources */,
 				CB53A6E01CC78FAC00DC01F5 /* main.m in Sources */,
 				CB781C801CC878B300F2C823 /* UIColor+Helper.m in Sources */,
 			);

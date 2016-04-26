@@ -105,7 +105,7 @@
             self.transform = scaleTransform;
             
             if ([self.deleagte respondsToSelector:@selector(dragging:)]) {
-                [self.deleagte dragging:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
+                [self.quoteDragdeleagte dragging:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
             }
 //
             
@@ -141,7 +141,7 @@
         if(self.deleagte){
             if([self.deleagte respondsToSelector:@selector(didDragRight:)])
             {
-                [self.deleagte didDragRight:self];
+                [self.quoteDragdeleagte didDragRight:self];
                 
             }
         }
@@ -159,7 +159,7 @@
             {
                 if([self.deleagte respondsToSelector:@selector(didDragLeft:)])
                 {
-                    [self.deleagte didDragLeft:self];
+                    [self.quoteDragdeleagte didDragLeft:self];
                 }
             }
             
@@ -174,7 +174,7 @@
         }];
         if([self.deleagte respondsToSelector:@selector(willBackToCenter:)])
         {
-            [self.deleagte willBackToCenter:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
+            [self.quoteDragdeleagte willBackToCenter:MIN(1.0, fabs(self.xFromCenter) / ACTION_MARGIN)];
         }
     }
     
@@ -201,7 +201,7 @@
                          
                          if (self.deleagte) {
                              if ([self.deleagte respondsToSelector:@selector(didDragLeft:)]) {
-                                 [self.deleagte didDragLeft:self];
+                                 [self.quoteDragdeleagte didDragLeft:self];
                              }
                          }
                      }];
@@ -223,7 +223,7 @@
                          
                          if (self.deleagte) {
                              if ([self.deleagte respondsToSelector:@selector(didDragRight:)]) {
-                                 [self.deleagte didDragRight:self];
+                                 [self.quoteDragdeleagte didDragRight:self];
                              }
                          }
                      }];

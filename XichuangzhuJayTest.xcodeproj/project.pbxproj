@@ -26,6 +26,7 @@
 		CB781C801CC878B300F2C823 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7B1CC878B300F2C823 /* UIColor+Helper.m */; };
 		CB781C811CC878B300F2C823 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */; };
 		CB781C871CC8C84700F2C823 /* XCZQuoteDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */; };
+		CB90D14F1CCF429000668697 /* XCZWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CB90D14E1CCF429000668697 /* XCZWork.m */; };
 		CBA481301CCF208200133386 /* XCZCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA4812F1CCF208200133386 /* XCZCollectionsViewController.m */; };
 		CBA481331CCF209900133386 /* XCZLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA481321CCF209900133386 /* XCZLibraryViewController.m */; };
 		CBA481361CCF20A700133386 /* XCZOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA481351CCF20A700133386 /* XCZOtherViewController.m */; };
@@ -91,6 +92,8 @@
 		CB781C7D1CC878B300F2C823 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		CB781C851CC8C84700F2C823 /* XCZQuoteDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZQuoteDraggableView.h; sourceTree = "<group>"; };
 		CB781C861CC8C84700F2C823 /* XCZQuoteDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZQuoteDraggableView.m; sourceTree = "<group>"; };
+		CB90D14D1CCF429000668697 /* XCZWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZWork.h; sourceTree = "<group>"; };
+		CB90D14E1CCF429000668697 /* XCZWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZWork.m; sourceTree = "<group>"; };
 		CBA4812E1CCF208200133386 /* XCZCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZCollectionsViewController.h; sourceTree = "<group>"; };
 		CBA4812F1CCF208200133386 /* XCZCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCZCollectionsViewController.m; sourceTree = "<group>"; };
 		CBA481311CCF209900133386 /* XCZLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCZLibraryViewController.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 			children = (
 				CBD1EEA61CCA0D2A0078ADF8 /* XCZQuote.h */,
 				CBD1EEA71CCA0D2A0078ADF8 /* XCZQuote.m */,
+				CB90D14D1CCF429000668697 /* XCZWork.h */,
+				CB90D14E1CCF429000668697 /* XCZWork.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				CB53A6E31CC78FAC00DC01F5 /* XCZAppDelegate.m in Sources */,
 				CBD1EEA21CC9C4C00078ADF8 /* XCZQuoteView.m in Sources */,
 				CB781C7E1CC878B300F2C823 /* NSArray+Helper.m in Sources */,
+				CB90D14F1CCF429000668697 /* XCZWork.m in Sources */,
 				CBA481331CCF209900133386 /* XCZLibraryViewController.m in Sources */,
 				CB53A6E01CC78FAC00DC01F5 /* main.m in Sources */,
 				CB781C801CC878B300F2C823 /* UIColor+Helper.m in Sources */,
@@ -567,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -612,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -652,6 +660,7 @@
 			baseConfigurationReference = 0B5DD014593BCF1555B3022A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/XichuangzhuJayTest",
@@ -660,6 +669,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mingren.XichuangzhuJayTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -668,6 +678,7 @@
 			baseConfigurationReference = 049A4627754C494DEE7957A8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/XichuangzhuJayTest",
@@ -676,6 +687,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mingren.XichuangzhuJayTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

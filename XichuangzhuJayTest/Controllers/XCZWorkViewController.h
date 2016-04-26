@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XCZWork.h"
+#import "XCZQuote.h"
+@interface XCZWorkViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-@interface XCZWorkViewController : UIViewController
+- (instancetype)initWithWork:(XCZWork *)work quote:(XCZQuote *)quote;
+- (instancetype)initWithWork:(XCZWork *)work;
 
 @end

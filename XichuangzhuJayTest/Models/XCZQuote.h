@@ -26,5 +26,7 @@
 
 + (XCZQuote *)getRandomQuoteExcept:(NSArray *)quoteIds;
 
++ (NSArray *)getByWorkId:(int)workId;
+
 
 @end

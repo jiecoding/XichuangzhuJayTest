@@ -15,7 +15,7 @@
 #import "Constants.h"
 #import "XCZQuoteDraggableView.h"
 #import "XCZWorkViewController.h"
-
+#import "XCZWork.h"
 static CGFloat const SecondQuoteViewOriginalScale = 0.97;
 
 
@@ -113,11 +113,13 @@ static CGFloat const SecondQuoteViewOriginalScale = 0.97;
   
 }
 
+
+
 #pragma mark - XCZQuoteViewDelegate
 
 - (void)quoteViewPressed:(XCZQuote *)quote
 {
-//    XCZWork *work = [XCZWork getById:quote.workId];
+    XCZWork *work = [XCZWork getById:quote.workId];
     XCZWorkViewController *controller = [[XCZWorkViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -171,7 +173,13 @@ static CGFloat const SecondQuoteViewOriginalScale = 0.97;
 
 - (void)refreshQuote
 {
-   
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    [self.firstQuoteView dragLeft];
+    
+    [UIView animateWithDuration:.4 animations:^{
+        self.secondQuoteView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+    }];
+
 }
 
 - (void)shareQuote
